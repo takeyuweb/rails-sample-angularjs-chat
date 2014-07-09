@@ -1,0 +1,15 @@
+paths:
+  angular: 'angular.min'
+  angularRoute: 'angular-route.min'
+  jquery: 'jquery.min'
+  domReady: 'domReady'
+
+shim:
+  angular:
+    deps: ['jquery']
+    exports: 'angular'
+  angularRoute:
+    deps: ['angular']
+  jquery:
+    deps: []
+    exports: 'jquery'

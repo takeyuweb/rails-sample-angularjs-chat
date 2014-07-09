@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsSampleAngularjsChat</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= csrf_meta_tags %>
+    <title>RailsSampleAngularjsChat</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= requirejs_include_tag 'application' %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
 
