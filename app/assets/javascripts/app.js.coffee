@@ -1,2 +1,2 @@
-define ['angular', 'angularRoute','controllers/controllers'], (angular) ->
-  angular.module 'AngularChat', ['ngRoute', 'controllers']
+define ['angular', 'angularRoute','controllers/controllers', 'services/services'], (angular) ->
+  angular.module 'AngularChat', ['ngRoute', 'controllers', 'services']

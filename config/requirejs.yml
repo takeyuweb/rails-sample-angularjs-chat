@@ -1,6 +1,9 @@
+---
+
 paths:
   angular: 'angular.min'
   angularRoute: 'angular-route.min'
+  angularResource: 'angular-resource.min'
   jquery: 'jquery.min'
   domReady: 'domReady'
 
@@ -10,6 +13,9 @@ shim:
     exports: 'angular'
   angularRoute:
     deps: ['angular']
+  angularResource:
+    deps: ['angular']
+
   jquery:
     deps: []
     exports: 'jquery'

@@ -1,2 +1,12 @@
 <h1>{{title}}</h1>
 <p>Rails 4.1 + RequireJS + AngularJS の Single Page Application 習作です。</p>
+
+<form name="messageForm"
+      ng-submit="save()">
+    <input ng-model="newMessage.body" type="text" size="100" focus required>
+    <button ng-disabled="messageForm.$invalid">発言</button>
+</form>
+
+<ul ng-repeat="message in messages">
+    <li>{{message.body}} - {{message.created_at}}</li>
+</ul>

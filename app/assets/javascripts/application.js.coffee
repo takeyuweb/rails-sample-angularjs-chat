@@ -1,14 +1,21 @@
 define [
-  'angular', 'app', 'domReady',
-  'jquery',
+  'angular', 'app', 'domReady', 'jquery',
   'angularRoute',
-  'controllers/rootController'
-], (angular, app, domReady) ->
+  'angularResource',
+  'controllers/rootController',
+  'services/message'
+], (angular, app, domReady, $) ->
   "use strict"
+  app.config ['$httpProvider', ($httpProvider) ->
+    $httpProvider.defaults.headers.common["X-CSRF-Token"] = $("meta[name=csrf-token]").attr("content")
+  ]
   app.config ['$routeProvider', ($routeProvider) ->
     $routeProvider.when '/',
+      controller: 'RootCtrl',
       templateUrl: 'assets/root.html',
-      controller: 'RootController'
+      resolve:
+        messages: (MultiMessageLoader) ->
+          MultiMessageLoader()
     .otherwise
       redirectTo: '/'
   ]
